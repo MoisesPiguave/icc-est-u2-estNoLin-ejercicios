@@ -17,7 +17,7 @@ public class InsertBST {
     public static class BST {
         public Nodo raiz;
 
-        public void insertar(int valor) {
+        public void insert(int valor) {
             raiz = insertarRec(raiz, valor);
         }
 

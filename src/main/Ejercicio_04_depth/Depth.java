@@ -10,10 +10,10 @@ public class Depth {
             this.valor = valor;
         }
     }
-    public static int calcularProfundidadMaxima(Nodo raiz) {
+    public static int maxDepth(Nodo raiz) {
         if (raiz == null) return 0;
-        int izquierda = calcularProfundidadMaxima(raiz.izquierda);
-        int derecha = calcularProfundidadMaxima(raiz.derecha);
+        int izquierda = maxDepth(raiz.izquierda);
+        int derecha = maxDepth(raiz.derecha);
         return Math.max(izquierda, derecha) + 1;
     }
 }

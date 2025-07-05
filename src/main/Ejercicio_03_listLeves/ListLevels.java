@@ -15,7 +15,7 @@ public class ListLevels {
             this.valor = valor;
         }
     }
-    public static List<LinkedList<Integer>> listPorNiveles(Nodo raiz) {
+    public static List<LinkedList<Integer>> ListLevels(Nodo raiz) {
         List<LinkedList<Integer>> resultado = new ArrayList<>();
         if (raiz == null) return resultado;
 

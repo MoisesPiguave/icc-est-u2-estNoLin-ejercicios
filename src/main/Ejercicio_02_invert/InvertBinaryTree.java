@@ -14,7 +14,7 @@ public class InvertBinaryTree {
         }
     }
 
-    public static class BinaryTree {
+    public static class InvertTree {
         public Nodo invertir(Nodo raiz) {
             if (raiz == null) return null;
 

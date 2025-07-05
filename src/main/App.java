@@ -3,6 +3,7 @@ package main;
 import utils.StudentValidator;
 import main.Ejercicio_01_insert.InsertBST;
 import main.Ejercicio_02_invert.InvertBinaryTree;
+import main.Ejercicio_02_invert.InvertBinaryTree.InvertTree;
 import main.Ejercicio_03_listLeves.ListLevels;
 import main.Ejercicio_04_depth.Depth;
 
@@ -19,11 +20,11 @@ public class App {
         System.out.println("\n--- Ejercicio 01: Insertar en BST ---");
         InsertBST.BST bst = new InsertBST.BST();
         int[] valores = {5, 3, 7, 2, 4, 6, 8};
-        for (int v : valores) bst.insertar(v);
+        for (int v : valores) bst.insert(v);
         bst.imprimirPorNiveles();
 
         System.out.println("\n--- Ejercicio 02: Invertir Árbol Binario ---");
-        InvertBinaryTree.BinaryTree binaryTree = new InvertBinaryTree.BinaryTree();
+        InvertTree binaryTree = new InvertTree();
         InvertBinaryTree.Nodo raizInvert = new InvertBinaryTree.Nodo(4);
         raizInvert.izquierda = new InvertBinaryTree.Nodo(2);
         raizInvert.derecha = new InvertBinaryTree.Nodo(7);
@@ -48,7 +49,7 @@ public class App {
         raizList.derecha.izquierda = new ListLevels.Nodo(6);
         raizList.derecha.derecha = new ListLevels.Nodo(9);
 
-        var niveles = ListLevels.listPorNiveles(raizList);
+        var niveles = ListLevels.ListLevels(raizList);
         for (LinkedList<Integer> nivel : niveles) {
             for (int i = 0; i < nivel.size(); i++) {
                 System.out.print(nivel.get(i));
@@ -65,7 +66,7 @@ public class App {
         raizProf.izquierda.derecha = new Depth.Nodo(3);
         raizProf.izquierda.izquierda.izquierda = new Depth.Nodo(8);
 
-        int profundidad = Depth.calcularProfundidadMaxima(raizProf);
+        int profundidad = Depth.maxDepth(raizProf);
         System.out.println("Profundidad máxima del árbol: " + profundidad);
     }
 }

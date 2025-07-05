@@ -1,187 +1,40 @@
-# Estructuras No Lineales – Ejercicios Árboles
+Arboles Binarios.
 
-Este proyecto contiene la solución a cuatro ejercicios prácticos sobre estructuras de datos tipo árbol binario, como parte del aprendizaje de estructuras no lineales en Java. Cada ejercicio se encuentra organizado en su propia carpeta, siguiendo la convención de paquetes y buenas prácticas.
+Ejercicio 1.
 
----
+insertar dentro del arbol.
+Para este metodo primero necesitamos crear un nodo, con sus atributos izquierda y derecha , ademas de el valor que este recibe.
+Luego se crean dos metodos de insertar, el normal insertar, que va a tener dentro la la llamda del metodo recursivo para ingresar.
 
-## Identificación del Estudiante (Obligatorio)
+Primero comprara el valor de el nodo es igual a null, es decir esta vacio. si es asi,se crea y se retorna un nuevo nodo con el valor que se ingreso en el metodo.
 
-Antes de comenzar a programar o ejecutar el proyecto, **debes completar tu nombre y correo institucional en el archivo `student.env`** que se encuentra en la raíz del proyecto. Este archivo es necesario para validar tu identidad como autor del trabajo.
-
-### ¿Por qué es obligatorio?
-
-Este proyecto utiliza una verificación automática que valida que has ingresado tu información personal. Si no lo haces:
-
-- Al ejecutar el proyecto (`App.java`) verás este mensaje de error:
-```
-❌ Debes completar STUDENT_NAME y STUDENT_EMAIL en student.env
-```
-- No podrás enviar tu código (`push`) al repositorio si tienes activado el sistema de validación local.
-- Las pruebas automáticas en GitHub Actions también fallarán si no detectan tu nombre y correo.
-
-### ¿Qué debo hacer?
-
-1. Abre el archivo `student.env` que ya está creado en el proyecto.
-2. Rellena tus datos:
-
-```
-STUDENT_NAME=Tu Nombre Completo
-STUDENT_EMAIL=tu.correo@institucion.edu.ec
-```
-
-
-3. **No borres estas líneas ni cambies los nombres de las variables.**
-4. Guarda los cambios y vuelve a ejecutar el programa o hacer push.
-
-> 💡 Este mecanismo asegura la autoría del código y que cada estudiante reciba su evaluación automática de forma personalizada.
-
----
+luego si este valor , es menor al nodo , se envia a la izquierda, caso contrario, el lado derecho, y asi es como vamos ingreando un valor por medio de nodos a un arbol. Ademas la clase tiene el metodo que nos imprime, para poder mostrar luego.
 
 
 
 
-## Explicación para el estudiante
+Ejercicio 2.
 
-```
-src/
-│
-├── Materia/
-│
-├── Ejercicio_01_insert/
-├── Ejercicio_02_invert/
-├── Ejercicio_03_listLeves/
-└── Ejercicio_04_depth/
-```
+Invertir un arbol.
+Para este metodo primero necesitamos crear un nodo, con sus atributos izquierda y derecha , ademas de el valor que este recibe.( igual que el primero)
 
----
+Tambien posee dos metodos uno normal y otro recuersivo , el recursivo lo que hace es comparar primero si el nodo es null, luego en una variable temp , vamos a guardar el valor de la raiz de el lado izquierdo, para poder luego cambiarla de posicion con la derecha.
 
-## Descripción de Ejercicios
-
-### Ejercicio 01: Insertar en un Árbol Binario de Búsqueda (BST)
-
-Carpeta: `Ejercicio_01_insert`
-Implementa un algoritmo para insertar nodos en un Árbol Binario de Búsqueda.
-
- **Input de ejemplo:** `[5, 3, 7, 2, 4, 6, 8]`
- **Output esperado:**
-
-```
-    5
-  3   7
- 2 4 6 8
-```
-
----
-
-### Ejercicio 02: Invertir un Árbol Binario
-
-📂 Carpeta: `Ejercicio_02_invert`
-Dada la raíz de un árbol binario, el algoritmo devuelve su versión invertida (espejo).
-
- **Input de ejemplo:**
-
-```
-    4
-  2   7
-1  3 6  9
-```
-
-**Output esperado:**
-
-```
-    4
-  7   2
-9  6 3  1
-```
-
----
-
-### Ejercicio 03: Listar Niveles en Listas Enlazadas
-
-📂 Carpeta: `Ejercicio_03_listLeves`
-Devuelve una lista enlazada con los nodos por nivel. Si hay N niveles, se obtienen N listas.
-
- **Input de ejemplo:**
-
-```
-    4
-  2   7
-1  3 6  9
-```
-
-**Output esperado:**
-
-```
-4  
-2 → 7  
-1 → 3 → 6 → 9
-```
-
----
-
-### Ejercicio 04: Calcular la Profundidad Máxima
-
-Carpeta: `Ejercicio_04_depth`
-Calcula la profundidad máxima de un árbol binario (la longitud del camino más largo desde la raíz hasta una hoja).
-
-**Input de ejemplo:**
-
-```
-    4
-  2   7
-1  3  
-8
-```
-
-**Output esperado:** `4`
-
----
-
-## Indicaciones Generales
-
-* Lee cuidadosamente el enunciado de cada ejercicio.
-* Cada carpeta debe contener:
-
-  * Código fuente Java.
-  * Casos de prueba.
-  * Comentarios claros.
-* Realiza commit y push con el mensaje:
-
-  ```
-  Estructuras No Lineales – Ejercicios Árboles
-  ```
-* En el AVAC, sube la **URL del repositorio** con el código.
-
----
-
-## No se calificará si:
-
-* No hay commit con los ejercicios.
-* No se incluye este README explicativo.
-* Las clases o métodos no siguen los nombres requeridos.
-
----
-
-## Rúbrica de Calificación
-
-| **Criterio**       | **Descripción**                                                                       | **Puntaje** |
-| ------------------ | ------------------------------------------------------------------------------------- | ----------- |
-| **Informe**        | No hay informe                                                                        | 0 pts       |
-|                    | Informe parcial **sin explicación** de cada método                                    | 1 pt        |
-|                    | Informe parcial **con explicación** de cada método                                    | 2 pts       |
-|                    | Informe completo                                                                      | 3 pts       |
-| **Funcionamiento** | No implementado                                                                       | 0 pts       |
-|                    | Implementado parcialmente: <br>• Ejercicio 1 y 4 → 2 pts<br>• Ejercicio 2 y 3 → 4 pts | 2–4 pts     |
-|                    | Código funcional pero **no pasa todas las pruebas**                                   | 6 pts       |
-|                    | Código funcional y **pasa todas las pruebas correctamente**                           | 7 pts       |
+Tambien cuenta con su metodo de impresion 
 
 
 
-## Contribuir
 
-Para contribuir a este proyecto, por favor crea un fork y envía una solicitud de extracción, o simplemente abre un issue con tus comentarios y sugerencias.
+Ejercicio 3.
 
-## Autores
+Listar nodos por niveles en listas enlazadas.
+Para este método creamos primero la clase Nodo con sus atributos izquierda, derecha y valor, igual que en los ejercicios anteriores. Luego, en el método principal usamos una cola para recorrer el árbol nivel por nivel (recorrido BFS). Empezamos agregando la raíz a la cola y mientras la cola no esté vacía, procesamos todos los nodos del nivel actual. Para cada nodo sacado de la cola, guardamos su valor en una lista enlazada correspondiente a ese nivel, y añadimos sus hijos (izquierdo y derecho) a la cola para el siguiente nivel. Así, obtenemos una lista que contiene listas enlazadas con los valores de cada nivel, facilitando visualizar cómo están distribuidos los nodos según su profundidad en el árbol.
 
-- [PABLO TORRES] - Desarrollo inicial
+
+
+Ejercicio 4.
+
+Calcular la profundidad máxima de un árbol binario.
+Primero definimos la clase Nodo con sus atributos izquierda, derecha y valor, igual que en los ejercicios anteriores. El método principal usa recursión para calcular la profundidad máxima del árbol. Para cada nodo, se calcula recursivamente la profundidad de su subárbol izquierdo y derecho, y se toma el máximo de ambos sumándole 1 (que representa el nivel actual). Si el nodo es null, la profundidad es 0. De esta manera, el método recorre todo el árbol y devuelve el número máximo de niveles que contiene, es decir, la profundidad máxima.
+
 
